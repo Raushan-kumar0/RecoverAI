@@ -1,0 +1,25 @@
+# Secrets — never commit real credentials
+.env
+*.env
+!.env.example
+recoverai/integrations/razorpay/.env
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# Local scratch
+*.log
+
+# RecoverAI local runtime files
+last_run.json
+mandate_retry_sequences.json
+pytest_full_output.txt
+real_results_log.jsonl
+used_cases.json

@@ -1,0 +1,11 @@
+# RecoverAI — Python dependencies (through Step 12)
+# Pinned to the versions this project was built and tested against.
+
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+joblib==1.5.3
+pytest==9.1.1
+requests==2.33.1
+streamlit==1.62.0
+python-dotenv==1.2.2

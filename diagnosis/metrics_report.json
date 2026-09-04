@@ -1,0 +1,144 @@
+{
+  "model_selected": "logistic_regression",
+  "validation_model_comparison": {
+    "logistic_regression": {
+      "roc_auc": 0.7047371836469825,
+      "pr_auc": 0.8537334160533034
+    },
+    "random_forest": {
+      "roc_auc": 0.6917585983127839,
+      "pr_auc": 0.8543580848944803
+    }
+  },
+  "selection_rule": "Prefer logistic_regression for explainability unless random_forest beats it by >0.03 validation ROC-AUC.",
+  "threshold_selection": {
+    "method": "Maximize F1 on validation set (precision_recall_curve sweep)",
+    "chosen_threshold": 0.43566147033844355,
+    "validation_f1_at_threshold": 0.8799999999995057
+  },
+  "validation_metrics_at_threshold": {
+    "precision": 0.7951807228915663,
+    "recall": 0.9850746268656716,
+    "f1": 0.88,
+    "roc_auc": 0.7047371836469825,
+    "pr_auc": 0.8537334160533034,
+    "confusion_matrix": {
+      "tn": 6,
+      "fp": 17,
+      "fn": 1,
+      "tp": 66
+    },
+    "threshold": 0.43566147033844355,
+    "n": 90,
+    "positive_rate": 0.7444444444444445
+  },
+  "validation_metrics_at_naive_0.5_threshold": {
+    "precision": 0.8,
+    "recall": 0.9552238805970149,
+    "f1": 0.8707482993197279,
+    "roc_auc": 0.7047371836469825,
+    "pr_auc": 0.8537334160533034,
+    "confusion_matrix": {
+      "tn": 7,
+      "fp": 16,
+      "fn": 3,
+      "tp": 64
+    },
+    "threshold": 0.5,
+    "n": 90,
+    "positive_rate": 0.7444444444444445
+  },
+  "test_metrics_at_threshold": {
+    "precision": 0.8055555555555556,
+    "recall": 1.0,
+    "f1": 0.8923076923076924,
+    "roc_auc": 0.615301724137931,
+    "pr_auc": 0.8564809664579123,
+    "confusion_matrix": {
+      "tn": 2,
+      "fp": 14,
+      "fn": 0,
+      "tp": 58
+    },
+    "threshold": 0.43566147033844355,
+    "n": 74,
+    "positive_rate": 0.7837837837837838
+  },
+  "false_positive_cost_analysis": {
+    "n_false_positives": 14,
+    "total_amount_at_risk_in_false_positives": 131732.05,
+    "average_false_positive_amount": 9409.43,
+    "assumption": "Cost estimate assumes each false positive triggers one low-cost autonomous action (reminder/payment link/retry) per Step 1 guardrail defaults, not the full amount_at_risk. A per-action cost isn't defined until Step 4/6, so this reports EXPOSURE (amount_at_risk chased) rather than a fabricated rupee cost figure."
+  },
+  "per_category_test_metrics": {
+    "checkout_abandonment": {
+      "precision": 0.7142857142857143,
+      "recall": 1.0,
+      "f1": 0.8333333333333334,
+      "roc_auc": 0.5444444444444445,
+      "pr_auc": 0.8204332463775188,
+      "confusion_matrix": {
+        "tn": 0,
+        "fp": 6,
+        "fn": 0,
+        "tp": 15
+      },
+      "threshold": 0.43566147033844355,
+      "n": 21,
+      "positive_rate": 0.7142857142857143
+    },
+    "failed_payment": {
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1": 0.967741935483871,
+      "roc_auc": 0.5333333333333333,
+      "pr_auc": 0.9632159507159506,
+      "confusion_matrix": {
+        "tn": 0,
+        "fp": 1,
+        "fn": 0,
+        "tp": 15
+      },
+      "threshold": 0.43566147033844355,
+      "n": 16,
+      "positive_rate": 0.9375
+    },
+    "failed_subscription": {
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333,
+      "roc_auc": 0.9047619047619048,
+      "pr_auc": 0.981547619047619,
+      "confusion_matrix": {
+        "tn": 1,
+        "fp": 2,
+        "fn": 0,
+        "tp": 14
+      },
+      "threshold": 0.43566147033844355,
+      "n": 17,
+      "positive_rate": 0.8235294117647058
+    },
+    "overdue_receivable": {
+      "precision": 0.7368421052631579,
+      "recall": 1.0,
+      "f1": 0.8484848484848485,
+      "roc_auc": 0.7857142857142857,
+      "pr_auc": 0.9206108219266113,
+      "confusion_matrix": {
+        "tn": 1,
+        "fp": 5,
+        "fn": 0,
+        "tp": 14
+      },
+      "threshold": 0.43566147033844355,
+      "n": 20,
+      "positive_rate": 0.7
+    }
+  },
+  "train_size": 434,
+  "validation_size": 90,
+  "test_size": 74,
+  "target_column": "ground_truth_recoverable",
+  "seed": 42
+}
