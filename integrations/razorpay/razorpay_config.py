@@ -75,6 +75,10 @@ def load_config_from_env() -> RazorpayConfig:
     """
     key_id = os.environ.get("RAZORPAY_KEY_ID")
     key_secret = os.environ.get("RAZORPAY_KEY_SECRET")
+    print(
+    "DEBUG: RECOVERAI_RAZORPAY_DRY_RUN =",
+    repr(os.environ.get("RECOVERAI_RAZORPAY_DRY_RUN"))
+    )
     dry_run = _parse_dry_run_flag(os.environ.get("RECOVERAI_RAZORPAY_DRY_RUN"))
 
     if not key_id or not key_secret:
